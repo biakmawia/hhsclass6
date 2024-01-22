@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  
+content="width=device-width, initial-scale=1.0">
+    <title>Holy Heart School - Class VI  
+Yearbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin:  
+20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+             
+background-color: #3498db;
+            color: #fff;
+        }
+
+        section {
+            margin-top:  
+20px;
+        }
+
+        h2 {
+            color: #3498db;
+            font-size: 24px;
+            font- 
+weight: bold;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        p {
+            line-height:  
+1.5;
+        }
+
+        img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+       
+  .student-details {
+            margin-top: 10px;
+        }
+
+        .quote {
+            font-style:  
+italic;
+            color: #555;
+        }
+
+        .school-logo {
+            text-align: center;
+            
+ margin-top: 10px;
+        }
+
+        .favorite-event {
+            font-weight: bold;
+            color:  
+#3498db;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Holy Heart School</h1>
+         
+<h1>Estd: 1988</h1>
+        <h1>Motto: Kindle Thy Light</h1>
+        <h2>Class VI Yearbook</h2>
+     
+</header>
+
+    <!-- School Logo -->
+    <div class="school-logo">
+        <!-- You can insert your school  
+logo here -->
+        <!-- Example: <img src="school_logo.png" alt="Holy Heart School Logo" width="150"  
+height="150"> -->
+    </div>
+
+    <section>
+        <h2>Hello, We are Class VI Students of 2023-2024  
+batch</h2>
+        <h2>Welcome to Our Yearbook!</h2>
+        <p>Explore the memories and moments of our  
+class at Holy Heart School in this special yearbook.</p>
+        <p>All students from our class and  
+their details are mentioned below:-</p>
+    </section>
+
+    <!-- Section for each student from Roll No. 1  
+to 72 -->
+    <!-- Example section for Roll No. 1 -->
+    <!-- Copy this section and modify details for  
+each student -->
+    <section class="student-details">
+        <h3><strong>Roll No:  
+1</strong></h3>
+        <p><strong>1. Name:</strong> Lalthantluangi</p>
+        <p><strong>2.  
+Address:</strong> Republic Veng </p>
+        <img src="images.jpg" alt="Thantluangi's Photo"  
+width="100" height="100">
+        <p><strong>3. Remarks:</strong> I will fondly remember my time as a  
+Class VI student at Holy Heart.</p>
+        <p><strong>4. Aspirations:</strong> To excel in both  
+academics and extracurricular activities.</p>
+        <p><strong>5. Memorable Moment:</strong>  
+Participating in Sir B.M-a's Quiz and winning the MVP title.</p>
+        <p><strong>6. Favourite  
+Event:</strong> Children's Day.</p>
+        <p class="favorite-event"><strong>7. Favourite  
+Subject:</strong> Science </p>
+        <p class="quote"><strong>8. Favourite Quote:</strong> "The future  
+belongs to those who believe in the beauty of their dreams." - Eleanor Roosevelt</p>
+    </section>
+     
+<!-- ... Repeat this section for Roll No. 2 to 72 -->
+
+</body>
+</html>
