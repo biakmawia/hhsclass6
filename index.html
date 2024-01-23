@@ -1,105 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holy Heart School - Class VI Yearbook</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #3498db;
-            color: #fff;
-        }
-
-        section {
-            margin-top: 20px;
-        }
-
-        h2 {
-            color: #3498db;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        h3 {
-            color: #333;
-        }
-
-        p {
-            line-height: 1.5;
-        }
-
-        img {
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .student-details {
-            margin-top: 10px;
-        }
-
-        .quote {
-            font-style: italic;
-            color: #555;
-        }
-
-        .school-logo {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .favorite-event {
-            font-weight: bold;
-            color: #3498db;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class VI Yearbook - Holy Heart School</title>
+  <style>
+    body {
+      background-color: #3498db; /* Blue background */
+      color: #fff; /* White text */
+      font-family: 'Arial', sans-serif;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #2980b9; /* Darker blue header */
+    }
+    section {
+      padding: 20px;
+      margin: 20px;
+      background-color: #fff; /* White content area */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .comment-section {
+      margin-top: 20px;
+    }
+    .comment-input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    .comments {
+      list-style: none;
+      padding: 0;
+    }
+    .comment {
+      background-color: #f1c40f; /* Yellow comment background */
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Holy Heart School - Class VI Yearbook</h1>
+    <p>School Motto: Kindle Thy Light</p>
+  </header>
 
-    <header>
-        <h1>Holy Heart School</h1>
-        <h1>Estd: 1988</h1>
-        <h1>Motto: Kindle Thy Light</h1>
-        <h2>Class VI Yearbook</h2>
-    </header>
+  <section>
+    <h2>Manners and Etiquette</h2>
+    <p>This class is known for upholding manners and etiquette throughout the year.</p>
+  </section>
 
-    <!-- School Logo -->
-    <div class="school-logo">
-        <!-- You can insert your school logo here -->
-        <!-- Example: <img src="school_logo.png" alt="Holy Heart School Logo" width="150" height="150"> -->
-    </div>
+  <section class="gallery">
+    <h2>Class Photo Gallery</h2>
+    <!-- Add your class photos here -->
+    <img src="photo1.jpg" alt="Class Photo 1" onclick="openCommentBox('photo1')">
+    <img src="photo2.jpg" alt="Class Photo 2" onclick="openCommentBox('photo2')">
+    <!-- Add more photos as needed -->
+  </section>
 
-    <section>
-        <h2>Hello, We are Class VI Students of 2023-2024 batch</h2>
-        <h2>Welcome to Our Yearbook!</h2>
-        <p>Explore the memories and moments of our class at Holy Heart School in this special yearbook.</p>
-        <p>All students from our class and their details are mentioned below:-</p>
-    </section>
+  <section class="comment-section">
+    <h2>Comments</h2>
+    <input type="text" class="comment-input" id="commentInput" placeholder="Write a comment...">
+    <button onclick="postComment()">Post Comment</button>
+    <ul class="comments" id="commentsList">
+      <!-- Comments will appear here -->
+    </ul>
+  </section>
 
-    <!-- Section for each student from Roll No. 1 to 72 -->
-    <!-- Example section for Roll No. 1 -->
-    <!-- Copy this section and modify details for each student -->
-    <section class="student-details">
-        <h3><strong>Roll No: 1</strong></h3>
-        <h3><strong>Name: Lalthantluangi</strong></h3>
-        <h3><strong>Class & Section: VI 'A'</strong></h3>
-        <!img src="images (21).jpeg" alt="Lalthantluangi's Photo" width="100" height="100">
-        <p><strong>Address:</strong> Republic Veng </p>   
-        <p><strong>Remarks:</strong> Being good in studies</p>
-        <p><strong>Aspirations:</strong> To become an IAS Officer</p>
-        <p><strong>Memorable Moment:</strong> When I stood first in both the first and second terms.</p>
-        <p><strong>Favourite Event:</strong> Children's Day.</p>
-        <p class="favorite-event"><strong>Favourite Subject:</strong> Social Science </p>
-        <p class="quote"><strong>Favourite Quote:</strong> "Work hard in silence; let success make the noise."</p>
-    </section>
-     
-    <!-- ... Repeat this section for Roll No. 2 to 72 -->
+  <script>
+    function openCommentBox(photoId) {
+      const commentInput = document.getElementById('commentInput');
+      commentInput.dataset.photoId = photoId;
+    }
 
+    function postComment() {
+      const commentInput = document.getElementById('commentInput');
+      const commentsList = document.getElementById('commentsList');
+
+      const commentText = commentInput.value.trim();
+      if (commentText) {
+        const photoId = commentInput.dataset.photoId || '';
+        const commentItem = document.createElement('li');
+        commentItem.classList.add('comment');
+        commentItem.textContent = commentText;
+
+        commentsList.appendChild(commentItem);
+        commentInput.value = '';
+
+        // Simulate storing comments (you would need a backend for a real application)
+        console.log(`Comment for photo ${photoId}: ${commentText}`);
+      }
+    }
+  </script>
 </body>
 </html>
