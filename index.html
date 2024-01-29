@@ -20,18 +20,10 @@
             margin-bottom: 20px;
         }
 
-        h1 {
-            font-size: 36px; /* Adjust font size of Holy Heart School */
+        /* Curved text effect */
+        .curved-text {
             display: inline-block;
-            background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-right: 10px;
-        }
-
-        #aizawl {
-            font-size: 24px; /* Adjust font size of AIZAWL */
-            color: #fff;
+            transform: skewY(-15deg);
         }
 
         section {
@@ -48,7 +40,16 @@
             font-weight: bold;
         }
 
-        /* Your existing styles continue here */
+        h3 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
 
         img {
             border-radius: 50%;
@@ -58,22 +59,116 @@
             margin-right: auto;
         }
 
-        /* Your existing styles continue here */
+        .student-details {
+            margin-top: 20px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #555;
+        }
+
+        .school-logo {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .favorite-event {
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        #visitor-count {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+            font-size: 18px;
+        }
+
+        #comment-section {
+            margin-top: 20px;
+        }
+
+        #comment-form {
+            margin-top: 10px;
+        }
+
+        #comments {
+            margin-top: 20px;
+        }
+
+        #comments p {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Holy Heart School</h1>
-    <span id="aizawl">AIZAWL</span> <!-- Adjusted font size -->
+    <h1><span class="curved-text">Holy Heart School</span></h1>
+    <h1>Estd: 1988</h1>
+    <h1>Motto: Kindle Thy Light</h1>
+    <h2>Class VI Yearbook</h2>
     <div class="school-logo">
-        <!-- Insert your school logo here -->
-        <img src="HHS Logo Final recoloured.jpg" alt="Holy Heart School Logo" width="150" height="150">
+    <!-- You can insert your school logo here -->
+    <img src="HHS Logo Final recoloured.jpg" alt="Holy Heart School Logo" width="150" height="150">
     </div>
-    <h1>Motto: Kindle Thy Light</h1> <!-- School motto -->
 </header>
 
-<!-- Your existing HTML content continues here -->
+<!-- School Logo -->
 
-</body>
-</html>
+<section>
+    <h2>Hello, We are Class VI Students of 2023-2024 batch</h2>    
+    <h2>Welcome to our Yearbook!</h2>
+    <p>Explore the memories and moments of our class at Holy Heart School in this special yearbook.</p>
+    <p>All students from our class and their details are mentioned below:-</p>
+
+    <!-- Section for each student from Roll No. 1 to 72 -->
+    <!-- Example section for Roll No. 1 -->
+    <!-- Copy this section and modify details for each student -->
+    <div class="student-details">
+        <h3><strong>Roll No: 1</strong></h3> 
+        <h3><strong>Name: Lalthantluangi</strong></h3>
+        <h3><strong>Class & Section: VI 'A'</strong></h3>
+        <img src="images (28).jpeg" alt="Lalthantluangi's Photo" width="150" height="150" class="left-aligned"> 
+        <p><strong>Address:</strong> Republic Veng </p>
+        <p><strong>Remarks:</strong> Being good in studies</p>
+        <p><strong>Aspirations:</strong> To become an IAS Officer</p>
+        <p><strong>Memorable Moment:</strong> When I stood first in both the first and second terms.</p>
+        <p><strong>Favourite Event:</strong> Children's Day</p>
+        <p class="favorite-event"><strong>Favourite Subject:</strong> Social Science </p>
+        <p class="quote"><strong>Favourite Quote:</strong> "Work hard in silence; let success make the noise."</p>
+    </div>
+
+    <!-- ... Repeat this section for Roll No. 2 to 72 -->
+
+</section>
+
+<!-- Visitor count -->
+<div id="visitor-count">
+    <p>Visitor Count: <span id="count">0</span></p>
+</div>
+
+<!-- Comment section -->
+<div id="comment-section">
+    <h3>Leave a Comment:</h3>
+    <form id="comment-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="comment">Your Comment:</label>
+        <textarea id="comment" name="comment" rows="4" required></textarea>
+        <button type="button" onclick="submitComment()">Submit Comment</button>
+    </form>
+</div>
+
+<!-- Display comments -->
+<div id="comments">
+    <h3>Comments:</h3>
+    <!-- Comments will be dynamically added here -->
+</div>
+
+<!-- JavaScript code for fetching and displaying comments -->
+<script>
+    // Fetch comments from the updated Gist URL
+fetch('https://api.github.com/gists
+      
