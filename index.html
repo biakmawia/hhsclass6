@@ -18,6 +18,17 @@
             background-color: #3498db;
             color: #fff;
             margin-bottom: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .school-motto {
+            font-size: 24px;
+            color: #333;
         }
 
         section {
@@ -46,7 +57,6 @@
         }
 
         img {
-            border-radius: 50%;
             margin-bottom: 20px;
             display: block;
             margin-left: auto;
@@ -100,13 +110,12 @@
 
 <header>
     <h1>Holy Heart School</h1>
-    <h1>Estd: 1988</h1>
-    <h1>Motto: Kindle Thy Light</h1>
-    <h2>Class VI Yearbook</h2>
+    <h1>AIZAWL</h1>
     <div class="school-logo">
-    <!-- You can insert your school logo here -->
-    <img src="HHS Logo Final recoloured.jpg" alt="Holy Heart School Logo" width="150" height="150">
+        <!-- You can insert your school logo here -->
+        <img src="HHS Logo Final recoloured.jpg" alt="Holy Heart School Logo" width="150" height="150">
     </div>
+    <h1>Motto: Kindle Thy Light</h1>
 </header>
 
 <!-- School Logo -->
@@ -195,22 +204,4 @@ fetch('https://api.github.com/gists/4f3661ac793ed8a30f5fb1cc6f6942a8')
         const comment = document.getElementById('comment').value;
 
         // Check if both name and comment are provided
-        if (name && comment) {
-            // Display the comment
-            const commentSection = document.createElement('div');
-            commentSection.textContent = name + ': ' + comment;
-            document.getElementById('comments').appendChild(commentSection);
-
-            // Clear the form
-            document.getElementById('comment-form').reset();
-        } else {
-            alert('Please provide both your name and comment.');
-    }
-
-        }
-
-    </script>
-
-</body>
-
-</html>
+    
