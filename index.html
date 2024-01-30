@@ -81,20 +81,8 @@
             font-size: 18px;
         }
 
-        #comment-section {
-            margin-top: 20px;
-        }
-
-        #comment-form {
-            margin-top: 10px;
-        }
-
         #comments {
-            margin-top: 20px;
-        }
-
-        #comments p {
-            margin-bottom: 5px;
+            display: none; /* Remove the entire comments section */
         }
     </style>
 </head>
@@ -110,23 +98,13 @@
         <h1>Estd: 1988</h1>
         <h1>Motto: Kindle Thy Light</h1>
         <h2>Class VI Yearbook</h2>
-
     </header>
 
-
-
-    <!-- School Logo -->
-
-
-
     <section>
-
         <h2>Hello, We are Class VI Students of 2023-2024 batch</h2>
         <h2>Welcome to our Yearbook!</h2>
         <p>Explore the memories and moments of our class at Holy Heart School in this special yearbook.</p>
         <p>All students from our class and their details are mentioned below:-</p>
-
-
 
         <!-- Section for each student from Roll No. 1 to 72 -->
 
@@ -135,7 +113,6 @@
         <!-- Copy this section and modify details for each student -->
 
         <div class="student-details">
-
             <h3><strong>Roll No: 1</strong></h3>
             <h3><strong>Name: Lalthantluangi</strong></h3>
             <h3><strong>Class & Section: VI 'A'</strong></h3>
@@ -147,152 +124,27 @@
             <p><strong>Favourite Event:</strong> Children's Day</p>
             <p class="favorite-event"><strong>Favourite Subject:</strong> Social Science </p>
             <p class="quote"><strong>Favourite Quote:</strong> "Work hard in silence; let success make the noise."</p>
-
         </div>
 
-
-
         <!-- ... Repeat this section for Roll No. 2 to 72 -->
-
     </section>
 
-
-
     <!-- Visitor count -->
-
     <div id="visitor-count">
-
         <p>Visitor Count: <span id="count">0</span></p>
-
     </div>
 
-
-
-    <!-- Comment section -->
-
-    <div id="comment-section">
-
-        <h3>Leave a Comment:</h3>
-
-        <form id="comment-form">
-
-            <label for="name">Your Name:</label>
-
-            <input type="text" id="name" name="name" required>
-
-            <label for="comment">Your Comment:</label>
-
-            <textarea id="comment" name="comment" rows="4" required></textarea>
-
-            <button type="button" onclick="submitComment()">Submit Comment</button>
-
-        </form>
-
-    </div>
-    
- <div> 
+    <!-- JavaScript code for fetching and displaying comments -->
+    <script>
         // Visitor count
-
         let count = localStorage.getItem('visitorCount') || 0;
-
         document.getElementById('count').innerText = count;
 
-
-
         // Increment visitor count
-
         count++;
-
         localStorage.setItem('visitorCount', count);
-     
- </div>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Permanent Comment Box</title>
-    <style>
-        /* Add your CSS styles here */
-        #comment-section {
-            margin-top: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        #comments {
-            margin-top: 10px;
-        }
-        .comment {
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-
-<div id="comment-section">
-    <h3>Leave a Comment:</h3>
-    <form id="comment-form">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="comment">Your Comment:</label>
-        <textarea id="comment" name="comment" rows="4" required></textarea>
-        <button type="submit">Submit Comment</button>
-    </form>
-
-    <div id="comments">
-        <h3>Comments:</h3>
-        <!-- Comments will be dynamically added here -->
-    </div>
-</div>
-
-<script>
-    // Load existing comments from localStorage
-    const existingComments = JSON.parse(localStorage.getItem('comments')) || [];
-
-    // Function to display comments
-    function displayComments() {
-        const commentsContainer = document.getElementById('comments');
-        commentsContainer.innerHTML = ''; // Clear previous comments
-
-        existingComments.forEach(comment => {
-            const commentElement = document.createElement('div');
-            commentElement.classList.add('comment');
-            commentElement.innerHTML = `<strong>${comment.name}</strong>: ${comment.comment}`;
-            commentsContainer.appendChild(commentElement);
-        });
-    }
-
-    // Display existing comments on page load
-    displayComments();
-
-    // Submit comment
-    document.getElementById('comment-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission behavior
-
-        const name = document.getElementById('name').value;
-        const comment = document.getElementById('comment').value;
-
-        // Add new comment to existing comments array
-        existingComments.push({ name, comment });
-
-        // Save comments to localStorage
-        localStorage.setItem('comments', JSON.stringify(existingComments));
-
-        // Display updated comments
-        displayComments();
-
-        // Clear the form
-        document.getElementById('comment-form').reset();
-    });
-</script>
+    </script>
 
 </body>
+
 </html>
-    
-        
-                
