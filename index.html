@@ -267,4 +267,25 @@ fetch('https://api.github.com/gists/4f3661ac793ed8a30f5fb1cc6f6942a8')
                 commentSection.textContent = name + ': ' + comment;
 
                 document.getElementById('
+                                        comments').appendChild(commentSection);
+
+                // Save comment to local storage
+                const comments = JSON.parse(localStorage.getItem('comments')) || [];
+                comments.push({ name, comment });
+                localStorage.setItem('comments', JSON.stringify(comments));
+
+                // Clear input fields
+                document.getElementById('name').value = '';
+                document.getElementById('comment').value = '';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+                                        
+
+                                    
         
