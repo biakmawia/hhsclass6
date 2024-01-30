@@ -209,36 +209,22 @@
     <script>
 
         // Fetch comments from the updated Gist URL
+fetch('https://api.github.com/gists/4f3661ac793ed8a30f5fb1cc6f6942a8')
+    .then(response => response.json()) // Parse response as JSON
+    .then(data => {
+        // Extract comments from the Gist content
+        const comments = data; // No need to parse content as JSON
 
-        fetch('https://api.github.com/gists/4f3661ac793ed8a30f5fb1cc6f6942a8')
-
-            .then(response => response.json()) // Parse response as JSON
-
-            .then(data => {
-
-                // Extract comments from the Gist content
-
-                const comments = JSON.parse(data.files['comments.json'].content);
-
-
-
-                // Display comments on the webpage
-
-                const commentsContainer = document.getElementById('comments');
-
-                comments.forEach(comment => {
-
-                    const commentElement = document.createElement('div');
-
-                    commentElement.textContent = comment.name + ': ' + comment.comment;
-
-                    commentsContainer.appendChild(commentElement);
-
-                });
-
-            })
-
-            .catch(error => console.error('Error fetching comments:', error));
+        // Display comments on the webpage
+        const commentsContainer = document.getElementById('comments');
+        comments.forEach(comment => {
+            const commentElement = document.createElement('div');
+            commentElement.textContent = comment.name + ': ' + comment.comment;
+            commentsContainer.appendChild(commentElement);
+        });
+    })
+    .catch(error => console.error('Error fetching comments:', error));
+        
 
         
 
